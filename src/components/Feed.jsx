@@ -18,7 +18,7 @@ export default function Feed() {
         <div className='feed-container'>
             {
                 items.length !== 0 && items.map((item, idx) => (
-                    <div key={idx}>
+                    <div className='item-container' key={idx}>
                         {item.id.videoId && <VideoCard video={item} />}
                         {item.id.channelId && <ChannelCard channel={item} />}
                     </div>

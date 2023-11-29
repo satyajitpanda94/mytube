@@ -1,0 +1,32 @@
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    border-bottom: 0.5px solid rgb(239, 239, 239);
+    background-color: white;
+    gap: 10px;
+}
+.navbar-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo{
+    background-color: red;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 5px 10px;
+}
+
+@media screen and (max-width: 430px) {
+    .navbar-container{
+        padding: 1vh 1vw;
+        gap: 1vw;
+    }
+    .logo{
+        font-size: 4vw;
+        padding: 1.5vw;
+    }
+}

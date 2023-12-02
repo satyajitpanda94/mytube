@@ -12,7 +12,6 @@ export default function Feed() {
         axios.get(`${BASE_URL}/search?q=${'bbc'}&type=date`, options)
             .then(({ data }) => setItems(data.items))
     }, [])
-    console.log(items)
 
     return (
         <div className='feed-container'>

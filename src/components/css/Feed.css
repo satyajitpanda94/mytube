@@ -1,4 +1,4 @@
-.feed-container{
+.feed-container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -6,6 +6,7 @@
     gap: 16px;
     margin: 10px;
 }
-.item-container{
+
+.feed-container>.item-container {
     width: 350px;
 }

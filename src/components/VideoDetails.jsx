@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { BASE_URL, options } from '../utils/axios'
 import ReactPlayer from 'react-player'
 import './css/VideoDetails.css'
@@ -13,9 +13,6 @@ export default function VideoDetails() {
     const [videoDetails, setVideoDetails] = useState(null)
     const [channelDetails, setChannelDetails] = useState(null)
     const [relatedVideos, setRelatedVideos] = useState([])
-    console.log(videoDetails)
-    console.log(channelDetails)
-    console.log(relatedVideos)
 
     useEffect(() => {
         axios.get(`${BASE_URL}/videos?id=${id}&part=statistics`, options)
@@ -44,7 +41,7 @@ export default function VideoDetails() {
                     }
                 </h3>
                 <div className="video-details-buttom">
-                    <div className="channel-details">
+                    <Link to={`/channel/${videoDetails?.snippet?.channelId}`} className="channel-details">
                         <img
                             src={channelDetails?.snippet?.thumbnails?.high?.url || channelDetails?.snippet?.thumbnails?.default?.url}
                             alt="thumbnail"
@@ -54,7 +51,7 @@ export default function VideoDetails() {
                             <h4>{channelDetails?.snippet?.title}</h4>
                             <span>{numberFormater(channelDetails?.statistics?.subscriberCount)} Subscribers</span>
                         </div>
-                    </div>
+                    </Link>
                     <div className="video-stats">
                         <div className='likes'>
                             <LuThumbsUp />

@@ -1,10 +1,11 @@
 import React from 'react'
 import { AiFillCheckCircle } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 
 export default function SearchItemChannelCard({ channel }) {
     console.log(channel)
     return (
-        <div className='searched-channel-container'>
+        <Link to={`/channel/${channel.id.channelId}`} className='searched-channel-container'>
             <div className="image-container">
                 <img
                     src={channel.snippet.thumbnails.high.url || channel.snippet.thumbnails.default.url}
@@ -19,6 +20,6 @@ export default function SearchItemChannelCard({ channel }) {
                 </h3>
                 <span>{channel.snippet.description}</span>
             </div>
-        </div>
+        </Link>
     )
 }

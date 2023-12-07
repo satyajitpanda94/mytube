@@ -3,6 +3,7 @@ import './css/VideoCard.css'
 import { format } from 'timeago.js'
 import axios from 'axios'
 import { BASE_URL, options } from '../utils/axios'
+import { Link } from 'react-router-dom'
 
 export default function VideoCard({ video }) {
     const [channelData, setChannelData] = useState(null)
@@ -13,11 +14,13 @@ export default function VideoCard({ video }) {
 
     return (
         <div className='videocard-container'>
-            <img
-                src={video.snippet.thumbnails.high.url || video.snippet.thumbnails.default.url}
-                alt="thumbnail"
-                className='video-thumbnail'
-            />
+            <Link to={`/video/${video.id.videoId}`}>
+                <img
+                    src={video?.snippet?.thumbnails?.high?.url || video?.snippet?.thumbnails?.default?.url}
+                    alt="thumbnail"
+                    className='video-thumbnail'
+                />
+            </Link>
 
             <div className='videocard-details'>
                 <h4 className='video-title'>

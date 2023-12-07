@@ -1,5 +1,6 @@
 .channelcard-container{
-    width: 100%;
+    width: 350px;
+    height: 260px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,6 +20,23 @@
     object-fit: cover;
 }
 
-.channelcard-buttom{
-    height: 70px;
+@media screen and (max-width: 740px) {
+    .channelcard-container{
+        height: 230px;
+    }
+}
+@media screen and (max-width: 370px) {
+    .channelcard-container{
+        width: 95vw;
+        height: 60vw;
+    }
+    .channel-thumbnail-container{
+        height: 52vw;
+    }
+    .channel-thumbnail{
+        width: 52vw;
+    }
+    .channelcard-buttom{
+        font-size: 4.5vw;
+    }
 }

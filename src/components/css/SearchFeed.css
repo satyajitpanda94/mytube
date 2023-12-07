@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     gap: 1.5vw;
-    margin: 20px;
+    margin-top: 1.5vw;
 }
 
 .searchfeed-container>.item-container {
@@ -27,6 +27,11 @@
     border-radius: 10px;
 }
 
+.searched-video-thumbnail:hover {
+    border-radius: 0;
+    transition: ease-out;
+}
+
 .searched-videocard-right,
 .searched-channel-card-right {
     width: 70%;
@@ -36,19 +41,21 @@
     gap: 0.6vw;
 }
 
-.searched-channel-card-right{
+.searched-channel-card-right {
     justify-content: center;
 }
+
 .searched-video-title,
 .searched-channel-title {
     font-size: 1.5vw;
 }
 
-.searched-channel-title{
+.searched-channel-title {
     display: flex;
     gap: 0.5vh;
     align-items: center;
 }
+
 .channel-details {
     display: flex;
     align-items: center;
@@ -78,4 +85,11 @@
     width: 12vw;
     border-radius: 50%;
     object-fit: cover;
+}
+
+@media screen and (max-width: 430px) {
+
+    .searchfeed-container>.item-container {
+        width: 95%;
+    }
 }

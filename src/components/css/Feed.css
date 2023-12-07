@@ -3,10 +3,6 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+    gap: 20px;
     margin: 10px;
-}
-
-.feed-container>.item-container {
-    width: 350px;
 }

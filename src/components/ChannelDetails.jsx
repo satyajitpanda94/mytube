@@ -10,8 +10,7 @@ export default function ChannelDetails() {
     const { id } = useParams()
     const [channelDetails, setChannelDetails] = useState({})
     const [channelVideos, setChannelVideos] = useState([])
-    console.log('--------', channelDetails)
-    console.log('*****', channelVideos)
+
     useEffect(() => {
         axios.get(`${BASE_URL}/channels?id=${id}&part=statistics`, options)
             .then(({ data }) => setChannelDetails(data?.items?.[0]))

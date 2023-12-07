@@ -1,0 +1,31 @@
+.secondary-navbar {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+.secondary-navbar>button {
+    color: black;
+    background-color: rgb(231, 231, 231);
+    padding: 10px 20px;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    border: none;
+}
+
+.secondary-navbar>button:hover,
+.secondary-navbar>button:focus {
+    background-color: rgb(255, 35, 35);
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .secondary-navbar>button {
+        font-size: 2vw;
+        padding: 1vw 2vw;
+    }
+}

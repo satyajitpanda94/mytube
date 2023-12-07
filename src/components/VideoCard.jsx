@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 
 export default function VideoCard({ video }) {
     const [channelData, setChannelData] = useState(null)
+    
     useEffect(() => {
         axios.get(`${BASE_URL}/channels?id=${video.snippet.channelId}`, options)
             .then(({ data }) => setChannelData(data?.items?.[0]))
@@ -31,7 +32,7 @@ export default function VideoCard({ video }) {
                     }
                 </h4>
                 <div className="videocard-buttom">
-                    <div className="channel-details">
+                    <Link to={`/channel/${video?.snippet?.channelId}`} className="channel-details">
                         {
                             channelData &&
                             <img
@@ -43,8 +44,12 @@ export default function VideoCard({ video }) {
                         <span>
                             {video.snippet.channelTitle}
                         </span>
-                    </div>
-                    <span>{format(video.snippet.publishedAt)}</span>
+                    </Link>
+                    {
+                        video?.snippet?.liveBroadcastContent==='live' ?
+                            <div className='live'>Live</div> :
+                            <span>{format(video.snippet.publishedAt)}</span>
+                    }
                 </div>
             </div>
         </div>

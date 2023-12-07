@@ -1,4 +1,10 @@
-.feed-container {
+.feed-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.feed-item-container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;

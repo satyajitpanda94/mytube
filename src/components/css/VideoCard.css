@@ -29,6 +29,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 5px;
+    font-size: 14px;
 }
 
 .videocard-details>.video-title {
@@ -38,8 +39,11 @@
 .channel-details {
     display: flex;
     align-items: center;
-    font-size: 14px;
     gap: 5px;
+}
+
+.channel-details:hover {
+    font-weight: 500;
 }
 
 .videocard-channel-thumbnail {
@@ -47,6 +51,12 @@
     width: 30px;
     border-radius: 50%;
     object-fit: cover;
+}
+
+.live {
+    background-color: red;
+    color: white;
+    padding: 0 1vw;
 }
 
 @media screen and (max-width: 370px) {
@@ -64,9 +74,10 @@
         font-size: 4vw;
     }
 
-    .channel-details{
+    .videocard-buttom {
         font-size: 3.5vw;
     }
+
     .videocard-channel-thumbnail {
         width: 10vw;
         height: 10vw;
